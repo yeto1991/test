@@ -1,7 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
 <head>
-{include file="include_aws_basehead.tpl"}
 {$app_ne.headtagu}
 {include file="user/include_common_head.tpl"}
 <script type="text/javascript">
@@ -113,6 +112,7 @@ $form.mode
 
 			<form name="form_user_enFairDetail" id="form_user_enFairDetail" method="post" action="" enctype="multipart/form-data">
 				{uniqid}
+				{csrfid}
 				{if ('d' == $form.mode)}
 				<input type="hidden" name="action_user_enFairChangeStep1" id="action_user_enFairChangeStep1" value="dummy" />
 				<input type="hidden" name="mode" id="mode" value="c" />

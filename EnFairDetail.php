@@ -70,6 +70,8 @@ class Jmesse_Action_UserEnFairDetail extends Jmesse_ActionClass
 	*/
 	function perform()
 	{
+		Ethna_Util::setCsrfID();
+		
 		$jm_fair =& $this->backend->getObject('JmFair', 'mihon_no', $this->af->get('mihon_no'));
 		if (Ethna::isError($jm_fair)) {
 			$this->backend->getLogger()->log(LOG_ERR, '見本市検索エラー');

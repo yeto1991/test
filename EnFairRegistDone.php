@@ -43,6 +43,11 @@ class Jmesse_Action_UserEnFairRegistDone extends Jmesse_ActionClass
 			$this->backend->getLogger()->log(LOG_ERR, '未ログイン');
 			return 'user_enLogin';
 		}
+		
+		//csrf
+		if(! Ethna_Util::isCsrfSafe()) {
+            return 'enError';
+            }
 
 		// 見本市番号
 		if ('c' == $this->af->get('mode') || 'e' == $this->af->get('mode')) {
